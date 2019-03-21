@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="marfix.com.loginapp.login.presenter.LoginPresenterImpl" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/email_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/basic_margin"
+            android:hint="@string/email_text"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/basic_margin"
+            android:hint="@string/password_text"
+            android:inputType="textPassword" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/basic_margin"
+            android:layout_marginRight="@dimen/basic_margin"
+            android:layout_marginTop="@dimen/basic_margin"
+            android:text="@string/log_in_text"
+            android:onClick="@{() -> presenter.logIn()}"
+            />
+
+
+    </LinearLayout>
+</layout>
