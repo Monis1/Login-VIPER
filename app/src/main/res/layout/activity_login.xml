@@ -2,11 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <variable
+            name="user"
+            type="marfix.com.loginapp.models.User" />
 
         <variable
             name="presenter"
-            type="marfix.com.loginapp.login.presenter.LoginPresenterImpl" />
+            type="marfix.com.loginapp.login.contract.LoginContracts.LoginPresenter" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,14 +35,22 @@
 
 
         <Button
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/basic_margin"
             android:layout_marginRight="@dimen/basic_margin"
             android:layout_marginTop="@dimen/basic_margin"
-            android:text="@string/log_in_text"
             android:onClick="@{() -> presenter.logIn()}"
-            />
+            android:text="@string/log_in_text" />
+
+        <ProgressBar
+            android:id="@+id/login_loader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/basic_margin"
+            android:visibility="gone" />
 
 
     </LinearLayout>

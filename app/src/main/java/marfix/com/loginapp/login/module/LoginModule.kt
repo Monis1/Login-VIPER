@@ -10,6 +10,7 @@ import marfix.com.loginapp.login.manager.LoginNetworkManager
 import marfix.com.loginapp.login.manager.LoginNetworkManagerImpl
 import marfix.com.loginapp.login.presenter.LoginPresenterImpl
 import marfix.com.loginapp.login.views.LoginActivity
+import marfix.com.loginapp.models.User
 
 @Module
 class LoginModule(var activity: LoginActivity) {
@@ -22,7 +23,7 @@ class LoginModule(var activity: LoginActivity) {
     @Provides
     fun provideLoginPresenter(view: LoginContracts.LoginView, loginInteractor: LoginInteractorImpl):
             LoginContracts.LoginPresenter {
-        val loginPresenter = LoginPresenterImpl(view, loginInteractor)
+        val loginPresenter = LoginPresenterImpl(view, loginInteractor, User())
         loginInteractor.interactorOutput = loginPresenter
         return loginPresenter
     }
